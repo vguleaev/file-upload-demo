@@ -1,4 +1,5 @@
 {
+  "name": "api",
   "scripts": {
     "dev": "tsx watch src/index.ts"
   },
