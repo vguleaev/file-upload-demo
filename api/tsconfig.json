@@ -1,13 +1,16 @@
 {
   "compilerOptions": {
+    "outDir": "./dist",
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Bundler",
+    "declarationMap": true,
+    "declaration": true,
+    "sourceMap": true,
+    "removeComments": true,
     "strict": true,
-    "types": [
-      "node"
-    ],
+    "types": ["node"],
     "jsx": "react-jsx",
-    "jsxImportSource": "hono/jsx",
+    "jsxImportSource": "hono/jsx"
   }
 }
