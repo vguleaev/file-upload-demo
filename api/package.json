@@ -4,15 +4,18 @@
   "main": "src/index.ts",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "tsx src/index.ts"
   },
   "dependencies": {
-    "@hono/node-server": "^1.9.0",
-    "hono": "^4.1.5",
+    "@hono/node-server": "^1.9.1",
+    "@supabase/supabase-js": "^2.41.1",
+    "dotenv": "^16.4.5",
+    "hono": "^4.1.7",
     "typescript": "^5.4.3"
   },
   "devDependencies": {
-    "@types/node": "^20.11.17",
-    "tsx": "^3.12.2"
+    "@types/node": "^20.12.2",
+    "tsx": "4.7.1"
   }
 }
