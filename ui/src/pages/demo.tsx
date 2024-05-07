@@ -12,6 +12,8 @@ import trashIcon from '../assets/trash-icon.svg';
 import clsx from 'clsx';
 import prettyBytes from 'pretty-bytes';
 
+const API_DOMAIN_NAME = import.meta.env.VITE_API_URL;
+
 type FileWithId = File & { id: string };
 
 type FileUploadState = {
@@ -46,7 +48,7 @@ const Demo = () => {
         [file.id]: { progress: 0, isSuccessful: false, error: '', isUploading: true } as FileUploadState,
       }));
 
-      const response = await axios.post('/api/upload', formData, {
+      const response = await axios.post(`${API_DOMAIN_NAME}/api/upload`, formData, {
         onUploadProgress: (progressEvent) => {
           setProgressMap((prev) => ({
             ...prev,
@@ -92,7 +94,7 @@ const Demo = () => {
   });
 
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <span className="text-5xl font-bold main-header-text">File Upload Demo</span>
       <div className="mt-10 w-full flex justify-center">
         <Card className="mt-5 p-5 min-w-[700px]">

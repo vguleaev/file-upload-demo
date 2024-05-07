@@ -6,6 +6,8 @@ WORKDIR /app
 # Copy 'package.json' and 'package-lock.json' (if available)
 COPY ./ui/package*.json ./
 
+RUN npm install serve -g
+
 # Install project dependencies
 RUN npm install
 
@@ -16,7 +18,7 @@ COPY ./ui .
 RUN npm run build
 
 # Expose port 5173 for the Vite server
-EXPOSE 5173
+EXPOSE 3010
 
 # Start the app
-CMD [ "npm", "run", "dev" ]
+CMD [ "npm", "run", "serve" ]
