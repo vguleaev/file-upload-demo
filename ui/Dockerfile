@@ -1,6 +1,6 @@
 FROM node:18-alpine
 
-RUN echo $VITE_API_URL
+ARG VITE_API_URL
 
 # Set the working directory
 WORKDIR /app
