@@ -4,23 +4,6 @@ import react from '@vitejs/plugin-react-swc';
 import { TanStackRouterVite } from '@tanstack/router-vite-plugin';
 import svgr from 'vite-plugin-svgr';
 
-const getPostData = (req) => {
-  return new Promise((resolve, reject) => {
-    let data = '';
-    req.on('data', (chunk) => {
-      data += chunk.toString();
-    });
-
-    req.on('end', () => {
-      if (!data) {
-        resolve({});
-      }
-
-      resolve(JSON.parse(data));
-    });
-  });
-};
-
 // https://vitejs.dev/config/
 export default ({ mode }: { mode: string }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
