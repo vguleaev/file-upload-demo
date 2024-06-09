@@ -9,6 +9,10 @@ Apps:
 
 Both apps have Dockerfiles
 
+File Storage: Supabase
+
+Hosted on Render.com
+
 # Docker
 
 docker build -f ./ui/Dockerfile . -t file-upload-ui
